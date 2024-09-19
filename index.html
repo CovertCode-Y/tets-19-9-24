@@ -1,79 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>NPA FANTASY 2014-2024</h1>
+      <h1>NBA FANTASY 2014-2024</h1>
     </header>
     <main class="container">
-        <h2 class="title">MY FANTASY TEAM</h2>
-        <div class="player-divim">
-<div class="point-guard">
-    <h3>POINT GUARD</h3>
-</div>
-<div class="shooting-guard">
-    <h3>SHOOTING GUARD</h3>
-</div>
-<div class="small-forward">
-    <h3>SMALL FORWARD</h3>
-</div>
-<div class="power-forward">
-    <h3>POWER FORWARD</h3>
-</div>
-<div class="center">
-    <h3>Center</h3>
-</div>
+      <h2 class="title">My Fantasy Team</h2>
+      <div class="player-divim">
+        <div class="point-guard">
+          <h3>POINT GUARD</h3>
         </div>
-
-
-            <form action="search" class="search-form">
-                <select name="position" id="position-input">
-                    <option value="PG">PG</option>
-                    <option value="SG">SG</option>
-                    <option value="SF">SF</option>
-                    <option value="PF">PF</option>
-                    <option value="C">C</option>
-                </select>
-                <input class="point-range" type="range" nim = "0" max = "20000">
-                <input class="FG%" type="range" nim = "0" max = "100">
-                <input class="3P%" type="range" nim = "0" max = "100">
-                <button class="search-btn">Search Player</button>
-            </form>
-
-  <table class="result-table">
-        <tr>
+        <div class="shooting-guard">
+          <h3>SHOOTING GUARD</h3>
+        </div>
+        <div class="small-forward">
+          <h3>SMALL FORWARD</h3>
+        </div>
+        <div class="power-forward">
+          <h3>POWER FORWARD</h3>
+        </div>
+        <div class="center">
+          <h3>CENTER</h3>
+        </div>
+      </div>
+      <form class="search-form">
+        <select name="position" id="position-input">
+          <option value="PG">PG</option>
+          <option value="SG">SG</option>
+          <option value="SF">SF</option>
+          <option value="PF">PF</option>
+          <option value="C">C</option>
+        </select>
+        <label>
+          points:
+          <input
+            class="point-range"
+            type="range"
+            min="0"
+            max="20000"
+            value="0"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+        </label>
+        <label>
+          twoPercent:
+          <input
+            class="fg-percent"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+        </label>
+        <label>
+          threePercent:
+          <input
+            class="three-point-percent"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+        </label>
+        <button type="button" class="search-btn">search player</button>
+      </form>
+      <table class="result-table">
+        <thead>
+          <tr>
             <th>Player Name</th>
             <th>Position</th>
             <th>Points</th>
-            <th>FG%</th>
-            <th>3P%</th>
+            <th>TwoPercent</th>
+            <th>ThreePercent</th>
             <th>Action</th>
-        </tr>
-        <tbody>
-            <tr>
-                <td>yosi</td>
-                <td>PG</td>
-                <td>1200</td>
-                <td>70</td>
-                <td>30</td>
-                <td><button class="btn-add-team">Add Damain To Current Team</button></td>
-            </tr>
-        </tbody>
-     
-        
-    </thead>
-  </table>
+          </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+      </table>
     </main>
-</body>
+  </body>
 </html>
-
-
-
-
-
